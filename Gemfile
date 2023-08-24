@@ -75,3 +75,5 @@ group :development do
 
   gem 'solargraph', '~> 0.49.0'
 end
+
+gem 'devise', '~> 4.9'
