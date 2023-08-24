@@ -53,6 +53,10 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 
   gem 'rspec-rails', '~> 6.0'
+
+  gem 'capybara', '~> 3.39'
+  gem 'selenium-webdriver', '~> 4.10'
+  gem 'webdrivers', '~> 5.3'
 end
 
 group :development do
