@@ -17,3 +17,10 @@ category1 = Category.create(name: 'Maquillaje')
 category2 = Category.create(name: 'Labios')
 cosmetic1.categories.push(category1, category2)
 cosmetic2.categories.push(category1)
+
+image1 = Image.create(main: true, cosmetic: cosmetic1, link: 'https://res.cloudinary.com/dv1x9ujqe/image/upload/v1689266597/gloss_anik_diva_tigwph.webp')
+image2 = Image.create(cosmetic: cosmetic1, link: 'https://res.cloudinary.com/dv1x9ujqe/image/upload/v1688957335/lip_gloss_angel_dhivhj.webp')
+
+variant1 = Variant.create(name: '01', hex_code: '#000000', image: image1)
+variant2 = Variant.create(name: '02', hex_code: '#ffffff', image: image1)
+variant3 = Variant.create(name: '03', hex_code: '#ffffff', image: image2)

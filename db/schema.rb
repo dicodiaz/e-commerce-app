@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_212557) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_28_220854) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +56,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_212557) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "images", force: :cascade do |t|
+    t.text "link"
+    t.boolean "main", default: false
+    t.bigint "cosmetic_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cosmetic_id"], name: "index_images_on_cosmetic_id"
+  end
+
+  create_table "variants", force: :cascade do |t|
+    t.string "name"
+    t.string "hex_code"
+    t.bigint "image_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_variants_on_image_id"
+  end
+
   add_foreign_key "cosmetics", "brands"
   add_foreign_key "cosmetics", "discounts"
+  add_foreign_key "images", "cosmetics"
+  add_foreign_key "variants", "images"
 end
