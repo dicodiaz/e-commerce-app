@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cosmetic %>
+
+<div>
+  <%= link_to "Edit this cosmetic", edit_cosmetic_path(@cosmetic) %> |
+  <%= link_to "Back to cosmetics", cosmetics_path %>
+
+  <%= button_to "Destroy this cosmetic", @cosmetic, method: :delete %>
+</div>

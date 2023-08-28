@@ -4,7 +4,7 @@ class CreateDiscounts < ActiveRecord::Migration[7.0]
       t.string :name
       t.text :description
       t.decimal :percent
-      t.boolean :active
+      t.boolean :active, default: false
 
       t.timestamps
     end
