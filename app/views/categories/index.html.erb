@@ -1,0 +1,8 @@
+<h1>Categories</h1>
+
+<div id="categories">
+  <% @categories.each do |category| %>
+    <%= render category %>
+    <%= category.cosmetics.map(&:name).join(', ') %>
+  <% end %>
+</div>
